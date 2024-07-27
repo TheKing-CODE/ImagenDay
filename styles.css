@@ -108,7 +108,7 @@
 		max-width: 520px;
 	}
 
-	.cards-img ul li .dados-img #titulo-img{
+	.cards-img ul li .dados-img .titulo-img{
 		font-weight: bolder;		
 		font-size: 30px;
 	}

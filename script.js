@@ -50,12 +50,20 @@ $(function(){
 	  		//preenchimento da img da semana 
 	  		for (const index in data){
 	  			var tagImg = "#img-" + index;
+				var tagTituloImg = "#titulo-img-" + index;
+				var tagDescricaoImg = "#descricao-img-" + index;
+				var tagDataImg = "#data-img-" + index;
+				
+
 	  			var tagDados = "li .dados-img:nth-of-type(" + index + ")";
 	  			$('li .dados-img:nth-of-type(3)')
 
 
 	  			$(tagImg).attr('src',data[index].url);
-	  			$('li .dados-img:nth-of-type(3)')
+	  			$(tagTituloImg).text(data[index].title);
+				//$(tagTituloImg).text(data[index].explanation);
+				$(tagDataImg).text(data[index].date);
+
 	  		}
 
 
