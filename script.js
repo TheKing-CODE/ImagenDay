@@ -39,11 +39,20 @@ $(function(){
 	  	if(Array.isArray(data)){
 	  		Data_atual = formatter.format(Data_atual);
 
+	  		//Exibindo a imagen do dia
 	  		$('#dia-img').text(Data_atual.toString());
 	  		$('#titulo-img').text(data[6].title);	
 	  		$('#descricao-img').text(data[6].explanation);
 	  		$('#autor').text(data[6].copyright);
 	  		$('#img-day').attr('src',data[6].url);
+	  		//
+
+	  		//preenchimento da img da semana 
+	  		for (const index in data){
+	  			var tagImg = "#img-" + index;
+	  			$(tagImg).attr('src',data[index].url);
+	  		}
+
 	  	}
 	  })
 	  .catch(error => {
@@ -53,20 +62,16 @@ $(function(){
 
 	$('#link-post').click(
 		function(){
-			console.log($('#link-post').text());
+		 navigator.clipboard.writeText("google.com")
+        .then(() => {
+            $('#link-post').text("Link Copiado!");
+            $('#link-post').css('background-color','#ef6383');// background-color: #ef3353
+        })
+        .catch(err => {
+            console.error('Falha ao copiar o texto: ', err);
+        });
 		}
 	);  
 })
-
-/*console.log(data[0].date);*/
-
-
-const formatter = new Intl.DateTimeFormat('pt-BR', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  weekday: 'long' // Opcional, para incluir o nome do dia da semana
-});
-
 
 
