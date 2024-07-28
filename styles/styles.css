@@ -26,6 +26,10 @@
 		background-color: #c3b199;
 	}
 
+	.main{
+		display: grid;
+	}
+
 	.inicio{
 		height: 100vh;
 		max-width: 1140px;
@@ -177,6 +181,33 @@
 		max-width: 420px;		
 	}
 
+
+	footer{
+		padding: 5px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 50px;
+		max-height: 50px;
+		background-color: #ef3353;
+		color: aliceblue;
+		width: 1140px;
+		max-width: 1140px;
+		margin: auto;
+		margin-top: 2%;
+	}
+	
+	footer a{
+		text-decoration: none;
+		color: antiquewhite;
+		margin-right: 10px;
+		font-size: 30px;
+	}
+	
+	footer a:hover{
+		color: black;
+	}
+
 	@media (max-width: 767px){
 
 		**{
@@ -245,6 +276,12 @@
 			width: 100%;
 		}
 
-
+		footer i{
+			font: 24px;
+		}
+	
+		footer a, h3{
+			font-size: 12px;
+		}
 		
 	}

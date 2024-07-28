@@ -119,3 +119,4 @@ $(function(){
 })
 
 
+//<p class="descricao-pag" id="descricao-pag">"Todos os dias uma imagen do cosmo com uma breve descrição"</p>
