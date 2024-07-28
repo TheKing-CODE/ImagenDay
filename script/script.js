@@ -53,11 +53,12 @@ $(function(){
 	  		$('#img-day').attr('src',data[6].url);
 			var urlDay = data[6].url; 
 			if(urlDay.includes("youtube")){
-				$('#img-day').css('display','none');
-				$('#video-principal').css('display','inherit');
-				//$('#video-link').attr('scr',data[6].url);
-				console.log(urlDay);
-			}
+				  $('#img-day').css('display','none');
+				  $('#video-principal').css('display','');
+				  $('#video-link').attr('src',urlDay);
+				  console.log(urlDay);
+			  }
+  
 	  		//
 
 	  		//preenchimento da img da semana 
@@ -67,17 +68,33 @@ $(function(){
 				var tagDescricaoImg = "#descricao-img-" + index;
 				var tagDataImg = "#data-img-" + index;
 				var descricaoImg = data[index].explanation;
+				var videoPrinciapal = "#video-principal-"+index;
+				var videoLink = "#video-link-"+index;
+				var urlDayImgSemana = data[index].url;
 				descricaoImg = descricaoImg.slice(0, 150) + "...";
 				
 
-	  			var tagDados = "li .dados-img:nth-of-type(" + index + ")";
-	  			$('li .dados-img:nth-of-type(3)')
+	  			if(urlDayImgSemana.includes("youtube")){
+					$(tagImg).css('display','none');
+
+					$(videoPrinciapal).css('display','');
+					$(videoLink).attr('src',data[index].url);
+
+					$(tagTituloImg).text(data[index].title);
+					$(tagDescricaoImg).text(descricaoImg);
+					$(tagDataImg).text(data[index].date);
+
+					console.log("preenchimento youtube");
+					console.log(videoPrinciapal);
+				}else{
+					$(tagImg).attr('src',data[index].url);
+	  				$(tagTituloImg).text(data[index].title);
+					$(tagDescricaoImg).text(descricaoImg);
+					$(tagDataImg).text(data[index].date);
+				}
 
 
-	  			$(tagImg).attr('src',data[index].url);
-	  			$(tagTituloImg).text(data[index].title);
-				$(tagDescricaoImg).text(descricaoImg);
-				$(tagDataImg).text(data[index].date);
+	  			
 
 	  		}
 	  	}
