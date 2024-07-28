@@ -82,7 +82,7 @@ $(function(){
 
 	$('#link-post').click(
 		function(){
-		 navigator.clipboard.writeText("google.com")
+		 navigator.clipboard.writeText("https://imagenday.vercel.app/")
         .then(() => {
             $('#link-post').text("Link Copiado!");
             $('#link-post').css('background-color','#ef6383');// background-color: #ef3353
