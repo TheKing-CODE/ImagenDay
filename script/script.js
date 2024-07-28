@@ -5,6 +5,9 @@ $(function(){
 	// Obtendo a data atual
 	let Data_atual = new Date();
 
+	let dataFormatada = Data_atual.toLocaleString('en-US', { timeZone: 'America/New_York' });
+	Data_atual = new Date(dataFormatada);
+
 	// Obtendo o mês atual e adicionando 1 para corrigir a base zero
 	var mes = Data_atual.getMonth() + 1;
 
@@ -25,6 +28,9 @@ $(function(){
 	}); //  API Intl.DateTimeFormat
 
 
+	console.log(Data_atual);
+
+
 	// Fazendo a requisição GET
 	fetch(url_key+"&start_date="+Data_futura)		
 	  .then(response => {
@@ -38,7 +44,7 @@ $(function(){
 	  .then(data => {	  	
 	  	if(Array.isArray(data)){
 	  		Data_atual = formatter.format(Data_atual);
-
+			
 	  		//Exibindo a imagen do dia
 	  		$('#dia-img').text(Data_atual.toString());
 	  		$('#titulo-img').text(data[6].title);	
