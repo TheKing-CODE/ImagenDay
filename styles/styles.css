@@ -115,15 +115,10 @@
 
 	.cards-img .titulo, .texto-titulo{
 		text-align: center;
-		
 	}
 
 	.cards-img .cards-blocos{		
 		gap: 10px;
-	}
-
-	.cards-img ul{
-			
 	}
 
 	.cards-img ul li{
@@ -183,17 +178,22 @@
 	}
 
 	@media (max-width: 767px){
+
+		**{
+			padding: 0px;
+			margin: 0px;
+		}
 		
 		header .img-principal{
 			width: 50%;
 			height: 50%;
 		}
+
 		.inicio{
 			width: 100%;
 			height: auto;
 		}
 
-		
 		.contanie-img{
 			grid-template-columns: 1fr;
 			grid-auto-flow: 1fr;
@@ -205,33 +205,46 @@
 			margin-bottom: 10px;
 		}
 
-		.cards-img {
-			border-style: solid;
-			border-color: aqua;
-			position: absolute;
+		.cards-img{
+		
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: auto;
+		}
+
+		.cards-img .texto-titulo{
 			width: 100%;
 		}
 
-		.cards-img ul{
-			display: grid;
-			gap: 10px;
-			width: 100%;
-			margin: 0px;
-			padding: 0px;
-		}
-		.cards-img ul li{
+		.cards-blocos{
+			
+			height: auto;
 			display: flex;
 			flex-direction: column;
-			width: 90%;
-			position: relative;
+			justify-content: center;
 		}
 
-		.cards-img{
-			height: auto;
+		.cards-blocos ul li{
+			display: flex;
+			flex-direction: column;
 			width: 100%;
-			gap: 0px;
-			margin: auto;
+			justify-content: center;
+			margin: 0px;			
+			margin-bottom: 10px;
+			position: relative;
+			left: -8%;
+		}	
+
+		.cards-blocos ul li img{
+			width: 95%;
 		}
+
+		.cards-blocos ul li .dados-img{
+			width: 100%;
+		}
+
 
 		
 	}
