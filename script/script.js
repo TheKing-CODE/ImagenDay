@@ -51,6 +51,13 @@ $(function(){
 	  		$('#descricao-img').text(data[6].explanation);
 	  		$('#autor').text(data[6].copyright);
 	  		$('#img-day').attr('src',data[6].url);
+			var urlDay = data[6].url; 
+			if(urlDay.includes("youtube")){
+				$('#img-day').css('display','none');
+				$('#video-principal').css('display','inherit');
+				//$('#video-link').attr('scr',data[6].url);
+				console.log(urlDay);
+			}
 	  		//
 
 	  		//preenchimento da img da semana 
