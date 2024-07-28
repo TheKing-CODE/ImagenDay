@@ -68,9 +68,6 @@
 		color: #e8373e;
 	}
 
-	.contanie-img .dados-img .descricao-img{
-
-	}
 
 	.contanie-img .dados-img button{
 	    background-color: #ef3353; /* Cor de fundo */
@@ -141,10 +138,6 @@
 		color: #ffffff;
 	}
 
-	.cards-img ul li span{		
-		
-	}
-
 	.cards-img ul li .dados-img{
 		display: grid;
 		gap: 0px;
@@ -189,30 +182,56 @@
 		max-width: 420px;		
 	}
 
-
-	.cards-img ul li:hover{
-
-	}
-
-	.cards-img ul li img:hover{
-	
-	}
-
-	
-
 	@media (max-width: 767px){
+		
+		header .img-principal{
+			width: 50%;
+			height: 50%;
+		}
+		.inicio{
+			width: 100%;
+			height: auto;
+		}
+
+		
 		.contanie-img{
 			grid-template-columns: 1fr;
 			grid-auto-flow: 1fr;
 			height: auto;
+			width: 100%;
 		}
 
 		.contanie-img .dados-img button{
 			margin-bottom: 10px;
 		}
 
-		.contanie-img .img-day{
-			
+		.cards-img {
+			border-style: solid;
+			border-color: aqua;
+			position: absolute;
+			width: 100%;
 		}
 
+		.cards-img ul{
+			display: grid;
+			gap: 10px;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		.cards-img ul li{
+			display: flex;
+			flex-direction: column;
+			width: 90%;
+			position: relative;
+		}
+
+		.cards-img{
+			height: auto;
+			width: 100%;
+			gap: 0px;
+			margin: auto;
+		}
+
+		
 	}
