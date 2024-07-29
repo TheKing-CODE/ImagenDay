@@ -30,13 +30,68 @@
 		display: grid;
 	}
 
-	.inicio{
-		height: 100vh;
+	.introducao{
+		display: grid;
+		grid-template-columns: 1fr 1fr;	
+		align-items: center;		
+		gap: 10px;
+		margin-bottom: 10px;
 		max-width: 1140px;
-		margin: auto;
+		margin: auto;		
+		margin-bottom: 5%;
+		background-color: #3a2d19;
+		color: antiquewhite;
 		
 	}
 
+	.introducao .galeria-img {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;	
+		align-items: center;
+		max-width: 1140px;
+	    min-width: 1fr;	    		
+		gap: 10px;
+		padding: 5px;
+	}
+
+
+	.introducao .introducao-texto .titulo-introducao{
+		font-family: "Playwrite NG Modern", cursive;
+		font-optical-sizing: auto;
+		font-style: normal;
+	}
+
+	.introducao .introducao-texto h1{
+		color: #e8373e;
+	}
+
+	.introducao .introducao-texto h1,h2{
+		text-align: center;		
+	}
+
+
+	.introducao .galeria-img img{
+		width: 100%;		
+	}
+
+	.introducao .introducao-texto a{
+		position: relative;
+		left: 45%;
+		color: antiquewhite;		
+		font-size: 30px;
+		text-decoration: none;
+	}
+	
+	.introducao .introducao-texto a:hover{
+		color: #e8373e;
+	}
+
+	.inicio{
+		height: 100vh;
+		max-width: 1140px;
+		margin: auto;		
+	}
 
 
 	.contanie-img{
@@ -99,18 +154,16 @@
 	    width: 90%;
 	    max-width: 1140px;
 	    min-width: 1fr;
-	    height: 100vh;
+	    height: auto;
 	    margin: auto; 
 	    margin-bottom: 20px;  	    
-	    margin-top: 12%;
+	    margin-top: 5%;	    
 	}
 
 	.cards-img .titulo{
 		font-family: "Playwrite NG Modern", cursive;
 		font-optical-sizing: auto;
-		font-style: normal;
-		
-		
+		font-style: normal;			
 	}
 
 	.cards-img .img-principal-2{
@@ -122,7 +175,8 @@
 	}
 
 	.cards-img .cards-blocos{		
-		gap: 10px;
+		height: auto;
+		
 	}
 
 	.cards-img ul li{
