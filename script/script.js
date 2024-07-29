@@ -51,11 +51,12 @@ $(function(){
 	  		$('#descricao-img').text(data[6].explanation);
 	  		$('#autor').text(data[6].copyright);
 	  		$('#img-day').attr('src',data[6].url);
+	  		$('#link-img-completa').attr('href',data[6].url);
 			var urlDay = data[6].url; 
 			if(urlDay.includes("youtube")){
 				  $('#img-day').css('display','none');
 				  $('#video-principal').css('display','');
-				  $('#video-link').attr('src',urlDay);
+				  $('#video-link').attr('href',urlDay);
 				  console.log(urlDay);
 			  }
   
