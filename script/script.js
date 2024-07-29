@@ -62,6 +62,10 @@ $(function(){
   
 	  		//
 
+		
+			
+	
+
 	  		//preenchimento da img da semana 
 	  		for (const index in data){
 	  			var tagImg = "#img-" + index;
@@ -71,27 +75,43 @@ $(function(){
 				var descricaoImg = data[index].explanation;
 				var videoPrinciapal = "#video-principal-"+index;
 				var videoLink = "#video-link-"+index;
+				var button = "#button-"+index;
 				var urlDayImgSemana = data[index].url;
 				descricaoImg = descricaoImg.slice(0, 150) + "...";
+				var linkButton = '#link-button-'+index;
+				
+
+				var DadosParaEnviar = {
+					url: data[index].url,
+					descricao: data[index].explanation,
+					titulo: data[index].title,
+					data: data[index].date,
+					autor: data[index].copyright
+				};
+
+				var dadosString = encodeURIComponent(JSON.stringify(DadosParaEnviar));
+						
+				const urlModelo = "http://localhost/pag/modelo.html?dados="+dadosString;
+				
+				
 				
 
 	  			if(urlDayImgSemana.includes("youtube")){
 					$(tagImg).css('display','none');
-
 					$(videoPrinciapal).css('display','');
 					$(videoLink).attr('src',data[index].url);
 
 					$(tagTituloImg).text(data[index].title);
 					$(tagDescricaoImg).text(descricaoImg);
 					$(tagDataImg).text(data[index].date);
-
-					console.log("preenchimento youtube");
-					console.log(videoPrinciapal);
+	
+					$(linkButton).attr('href',urlModelo);					
 				}else{
 					$(tagImg).attr('src',data[index].url);
 	  				$(tagTituloImg).text(data[index].title);
 					$(tagDescricaoImg).text(descricaoImg);
 					$(tagDataImg).text(data[index].date);
+					$(linkButton).attr('href',urlModelo);		
 				}
 	  		}
 
