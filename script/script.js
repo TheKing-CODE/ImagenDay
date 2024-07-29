@@ -91,7 +91,7 @@ $(function(){
 
 				var dadosString = encodeURIComponent(JSON.stringify(DadosParaEnviar));
 						
-				const urlModelo = "http://localhost/pag/modelo.html?dados="+dadosString;
+				const urlModelo = "https://imagenday.vercel.app/pag/modelo.html?dados="+dadosString;
 				
 				
 				
