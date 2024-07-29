@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Imagen Day</title>
-	<link rel="icon" href="/Img/img2.svg" type="image/png">
-	<link rel="stylesheet" href="/pag/styles.css">
+	<link rel="icon" href="img2.svg" type="image/png">
+	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/f0ac6751a1.js" crossorigin="anonymous"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,8 @@
 </head>
 
 <body>
+
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>	
 	<header class="cabecalho" id="cabecalho">
 		<h1>Day Imagen</h1>	
 		<img class="img-principal" id="img-principal" src="/Img/img2.svg"></img>
@@ -28,6 +30,7 @@
 				<p class="descricao-img" id="descricao-img"> Do ​​nosso ponto de vista na Via Láctea , vemos NGC 6946 de frente . A grande e bela galáxia espiral está localizada a apenas 20 milhões de anos-luz de distância, atrás de um véu de poeira e estrelas em primeiro plano na alta e distante constelação de Cepheus. Neste nítido retrato telescópico , do núcleo para fora as cores da galáxia mudam da luz amarelada de estrelas velhas no centro para jovens aglomerados de estrelas azuis e regiões avermelhadas de formação de estrelas ao longo dos braços espirais soltos e fragmentados. NGC 6946 também é brilhante em luz infravermelha e rica em gás e poeira, exibindo uma alta taxa de nascimento e morte de estrelas. Na verdade, desde o início do século XX, dez supernovas confirmadas , as explosões de morte de estrelas massivas, foram descobertas em NGC 6946. Com quase 40.000 anos-luz de diâmetro, NGC 6946 também é conhecida como Galáxia dos Fogos de Artifício .</p>
 				<span class="creditos-direitos" id="creditos-direitos" style="margin-bottom: 20px;">Crédito da imagem e direitos autorais : <span class="autor" id="autor"></span></span>
 				<button class="link-post" id="link-post">Compatilhe!</button>
+				<button class="link-post" id="link-post"><a class="link-img-completa" id="link-img-completa" href="">Ver imagem completa</a></button>
 			</div>
 		</div>	
 	</div>
@@ -40,4 +43,58 @@
 			<a class="link-linkedin" id="link-linkedin" href="https://www.linkedin.com/in/allan-christian-9501aa307/"><i class="fa-brands fa-linkedin"></i></a>
 		</div>
 	</footer>
+	<script>
+
+		function extrairDados() {
+            // Obtém a string de parâmetros da URL
+            const params = new URLSearchParams(window.location.search);
+            
+            // Verifica se o parâmetro 'dados' está presente na URL
+            if (params.has('dados')) {
+                // Obtém o valor do parâmetro 'dados' (que é um JSON)
+                const dadosJson =  decodeURIComponent(params.get('dados'));
+                
+                // Converte o JSON para um objeto JavaScript
+                const dados = JSON.parse(dadosJson);
+                
+                return dados;
+            } else {
+                // Caso o parâmetro 'dados' não esteja presente na URL
+                cosnole.log("Nenhum dado encontrado");                                    
+            }
+        };
+
+        function preencherDados(Dados){
+        	$('#img-day').attr('src',Dados.url);
+        	$('#titulo-img').text(Dados.titulo);
+        	$('#dia-img').text(Dados.data);
+        	$('#descricao-img').text(Dados.descricao);
+        	$('#autor').text(Dados.autor);
+        	$('#link-img-completa').attr('href',Dados.url);
+        };	
+
+        $('#link-post').click(
+			function(){
+			 navigator.clipboard.writeText(window.location.href)
+	        .then(() => {
+	            $('#link-post').text("Link Copiado!");
+	            $('#link-post').css('background-color','#ef6383');// background-color: #ef3353
+	        })
+	        .catch(err => {
+	            console.error('Falha ao copiar o texto: ', err);
+	        });
+			}
+		); 
+
+        var dadosRecebidos = extrairDados();
+        preencherDados(dadosRecebidos);
+	</script>
+
+
 <body>
+</html>
+
+
+
+
+		
