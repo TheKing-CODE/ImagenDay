@@ -31,7 +31,7 @@ body{
 }
 
 .inicio{
-    height: 100vh;
+    height: auto;
     max-width: 1140px;
     margin: auto;
     
@@ -73,52 +73,55 @@ body{
 }
 
 
-.contanie-img .dados-img button{
-    background-color: #ef3353; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    border: none; /* Remover borda */
-    padding: 10px 20px; /* Espaçamento interno */
-    text-align: center; /* Alinhamento do texto */
-    text-decoration: none; /* Remover sublinhado */
-    display: inline-block; /* Exibir como um bloco */
-    font-size: 18px; /* Tamanho da fonte */
-    width: 65%;
+
+    .contanie-img .dados-img button{
+        background-color: #ef3353; /* Cor de fundo */
+        color: white; /* Cor do texto */
+        border: none; /* Remover borda */
+        padding: 10px 20px; /* Espaçamento interno */
+        text-align: center; /* Alinhamento do texto */
+        text-decoration: none; /* Remover sublinhado */
+        display: inline-block; /* Exibir como um bloco */
+        font-size: 18px; /* Tamanho da fonte */
+        width: 65%;     
+        cursor: pointer; /* Cursor ao passar */
+        border-radius: 20px; /* Raio da borda para arredondar */
+        transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+        box-shadow: 0px 0px 0px 2px;
+        margin: auto 4px;
+        margin-top: 10px;   
+        margin-bottom: 0px; 
+    }
+
+    .contanie-img .dados-img a{
+        text-decoration: none;
+        color: white;
+    }
+    footer{
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        max-height: 50px;
+        background-color: #ef3353;
+        color: aliceblue;
+        width: 1140px;
+        max-width: 1140px;
+        margin: auto;
+        margin-top: 2%;
+    }
     
-    cursor: pointer; /* Cursor ao passar */
-    border-radius: 20px; /* Raio da borda para arredondar */
-    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
-    box-shadow: 0px 0px 0px 2px;
-    margin: auto 4px;
-    margin-top: 10px;	
-    	
-}
-
-footer{
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    max-height: 50px;
-    background-color: #ef3353;
-    color: aliceblue;
-    width: 1140px;
-    max-width: 1140px;
-    margin: auto;
-    margin-top: 2%;
-}
-
-footer a{
-    text-decoration: none;
-    color: antiquewhite;
-    margin-right: 10px;
-    font-size: 30px;
-}
-
-footer a:hover{
-    color: black;
-}
-
+    footer a{
+        text-decoration: none;
+        color: antiquewhite;
+        margin-right: 10px;
+        font-size: 30px;
+    }
+    
+    footer a:hover{
+        color: black;
+    }
 @media (max-width: 767px){
 
     **{
@@ -148,11 +151,14 @@ footer a:hover{
         margin-bottom: 10px;
     }
     
-    footer i{
-        font: 24px;
-    }
-
-    footer a, h3{
-        font-size: 12px;
-    }
+        footer{
+            width: 100%;
+        }   
+        footer i{
+            font: 24px;
+        }
+    
+        footer a, h3{
+            font-size: 12px;
+        }
 }
