@@ -146,6 +146,23 @@ $(function(){
         });
 		}
 	);  
+
+
+	$('#button-mobile').click( function(){
+		$('#log-mobile').css('display','none');
+		$('#cabecalho').css('background-color', '#3a2d19');
+		$('#links-mobile').css('display','flex');  //background-color: #3a2d19;
+	})
+
+	$('#icon-link').click( function(){
+		$('#log-mobile').css('display','flex');
+		$('#cabecalho').css('background-color', 'inherit');
+		$('#links-mobile').css('display','none');  //background-color: #3a2d19;
+	})
+
+
+
+
 })
 
 

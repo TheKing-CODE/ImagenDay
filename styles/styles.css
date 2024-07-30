@@ -4,23 +4,72 @@
 
 	}
 
+	html{
+		scroll-behavior: smooth;
+	}
+
+	
+	header .menu-mobile{
+		display: none;
+		
+	}
+
+	header .links-mobile{
+		display: none;
+	}
 
 	header{
-		text-align: center;
-		display: flex;
+		display: flex;    
+		justify-content: space-between;    
 		align-items: center;
-		justify-content: center;
-		margin: 25px;
+		max-width: 1136px;       
 		border-bottom: solid;
+		border-color: #563444;
+		padding: 32px 0;
+		padding-bottom: 0px;
+		margin: auto ;    
+		margin-bottom: 10px;
+
 		font-family: "Playwrite NG Modern", cursive;
 		font-optical-sizing: auto;
 		font-style: normal;
 	}
 
-	header .img-principal{
-		width: 10%;
-		height: 10%;
+	header .logo{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		max-width: 1140px;
+		margin: auto;
 	}
+
+	header .img-principal{
+		width: 20%;
+		height: 20%;
+	}
+
+	header nav ul{
+		list-style-type: none;
+		width: 130%;
+		position: relative;
+		left: -40%;
+	}
+	
+	header nav ul li{
+		display: inline;
+		margin-right: 50px;
+		width: 22px;
+	}
+	
+	header nav ul li a{
+		text-decoration: none;
+		color: black;
+	}
+
+	header nav ul li a:hover{
+		color: #e8373e;
+	}
+
 
 	body{
 		background-color: #c3b199;
@@ -41,7 +90,7 @@
 		margin-bottom: 5%;
 		background-color: #3a2d19;
 		color: antiquewhite;
-		
+		padding: 10px;
 	}
 
 	.introducao .galeria-img {
@@ -72,15 +121,18 @@
 
 
 	.introducao .galeria-img img{
-		width: 100%;		
+		width: 100%;	
+		border-style: solid;
+		border-width: 2px;	
 	}
 
 	.introducao .introducao-texto a{
 		position: relative;
-		left: 45%;
+		left: 40%;
 		color: antiquewhite;		
 		font-size: 30px;
 		text-decoration: none;
+		margin-left: 10px;
 	}
 	
 	.introducao .introducao-texto a:hover{
@@ -274,11 +326,76 @@
 			margin: 0px;
 			
 		}
-		
-		header .img-principal{
+
+		header .logo, nav{
+			display: none;
+		}
+
+		header{
+			display: flex;
+			justify-content: space-between;
+
+			background-color: inherit;
+		}
+
+		header .menu-mobile{
+			display: flex;
+			flex-direction: row;
+		}
+
+		header .menu-mobile .logo-mobile{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+			padding-right: 5%;
+			height: 100%;
+			width: auto;
+		}
+
+		header .menu-mobile .logo-mobile img{
+			width: 30%;
+			height: 30%;
+			position: relative;
+		}
+
+		header .menu-mobile h1{
+			font-size: 22px;
+			margin-right: 0px;
+		}
+
+		header .menu-mobile i{
+			font-size: 22px;
+			display: inherit;
+		}
+
+		header .menu-mobile .img-principal{
 			width: 50%;
 			height: 50%;
+			
 		}
+
+		header .links-mobile{
+			display: none;
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
+			background-color: #3a2d19;
+			padding: 5%;
+			margin-right: 4%;
+		}
+
+		#icon-link{
+			display: inherit;
+			margin-right: 10px;
+		}
+
+		header .links-mobile a{
+			color: #c3b199;
+			font-size: 12px;
+			
+		}
+
 
 		.introducao{
 			display: flex;
@@ -298,6 +415,10 @@
 
 		.inicio .img-day{
 			height: 100%;
+		}
+
+		.introducao #titulo3-introducao{
+			text-align: center;
 		}
 
 		.contanie-img{
