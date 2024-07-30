@@ -322,9 +322,9 @@
 	@media (max-width: 767px){
 
 		**{
-			padding: 0px;
-			margin: 0px;
-			
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
 		}
 
 		header .logo, nav{
@@ -400,7 +400,9 @@
 		.introducao{
 			display: flex;
 			flex-direction: column;
-			width: 100%;			
+			width: 100%;
+			position: relative;
+			left: -1.8%;			
 		}
 
 		
@@ -410,11 +412,17 @@
 			flex-direction: column;
 			width: 100%;
 			height: auto;
+			padding: 0px;
 			margin-bottom: 10px;
+			position: relative;
+			left: -1.8%;
 		}
 
 		.inicio .img-day{
 			height: 100%;
+			width: 105%;
+			margin: 0px;
+			padding: 0px;
 		}
 
 		.introducao #titulo3-introducao{
@@ -438,7 +446,8 @@
 			align-items: center;
 			width: 100%;
 			height: auto;
-			border-style: solid;			
+			border-style: solid;
+						
 		}
 
 		.cards-img .texto-titulo{
@@ -450,6 +459,8 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			position: relative;
+			left: -1.0%;
 		}
 
 		.cards-blocos ul li{
@@ -472,6 +483,8 @@
 		}
 
 		footer{
+			position: relative;
+			left: -1.8%;
 			width: 100%;
 		}	
 		footer i{
