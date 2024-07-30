@@ -148,15 +148,18 @@
 
 	.contanie-img{
 		display: grid;
+		justify-content: center;
+		align-items: center;
 		grid-template-columns: 1fr 1fr;
-		height: 100%;
+		height: auto;
 		padding-bottom: 10px;
 		border-bottom: solid;
 	}
 
 	.contanie-img .img-day{
 		width: 100%;
-		height: 100%;
+		height: auto;
+		max-height: 100%;
 	}
 
 	.contanie-img .dados-img{
@@ -166,7 +169,7 @@
 		margin-top: 10%;
 		margin-left: 20px;
 		width: 90%;
-		height: 100%;
+		height: auto;
 		grid-area: 1 2 1 2;		
 	}
 
