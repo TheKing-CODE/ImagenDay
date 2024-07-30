@@ -289,10 +289,15 @@
 		
 
 		.inicio{
-			display: grid;
+			display: flex;
+			flex-direction: column;
 			width: 100%;
 			height: auto;
 			margin-bottom: 10px;
+		}
+
+		.inicio .img-day{
+			height: 100%;
 		}
 
 		.contanie-img{
