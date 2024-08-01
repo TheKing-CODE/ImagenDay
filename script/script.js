@@ -15,7 +15,7 @@ $(function(){
 	var mesFormatado = mes.toString().padStart(2, '0');
 
 	// Formatando o dia com zero à esquerda se necessário
-	var dia = (Data_atual.getDate()-6).toString().padStart(2, '0');
+	var dia = (Data_atual.getDate()).toString().padStart(2, '0');
 
 	// Criando a data futura no formato YYYY-MM-DD
 	let Data_futura = Data_atual.getFullYear().toString() + "-" + mesFormatado + "-" + dia;
@@ -28,11 +28,31 @@ $(function(){
 	}); //  API Intl.DateTimeFormat
 
 
-	console.log(Data_atual);
+	
+	function subtrairDias(data, dias) {
+	    // Cria um objeto Date a partir da string de data
+	    const dataAtual = new Date(data);
+	    
+	    // Subtrai os dias da data
+	    dataAtual.setDate(dataAtual.getDate() - dias);
+	    
+	    // Obtém o ano, mês e dia da data ajustada
+	    const ano = dataAtual.getFullYear();
+	    const mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // Meses começam em 0
+	    const dia = String(dataAtual.getDate()).padStart(2, '0');
+	    
+	    // Retorna a data no formato AAAA-MM-DD
+	    return `${ano}-${mes}-${dia}`;
+	}
+
+	
+	var DataPassada = subtrairDias(Data_atual, 6);
+
+
 
 
 	// Fazendo a requisição GET
-	fetch(url_key+"&start_date="+Data_futura)		
+	fetch(url_key+"&start_date="+DataPassada)		
 	  .then(response => {
 	    // Verifica se a resposta foi bem-sucedida
 	    if (!response.ok) {
